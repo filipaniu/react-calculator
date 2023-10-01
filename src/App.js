@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import ExampleComponent from "./ExampleComponent";
 
 function onButtonClick() {
     console.log("clicked ", Math.random());
@@ -16,6 +17,7 @@ function App() {
             <main>
                 <img src={logo} className="App-logo" alt="logo"/>
                 <p>{text}</p>
+                <ExampleComponent/>
                 <button onClick={onButtonClick}>randomize</button>
             </main>
             <footer>Footer</footer>
