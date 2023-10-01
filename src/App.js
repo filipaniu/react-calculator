@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import ExampleComponent from "./ExampleComponent";
+import Counter from "./Counter";
 import SecondComponent from "./SecondComponent";
 
 function onButtonClick() {
@@ -18,7 +18,7 @@ function App() {
             <main>
                 <img src={logo} className="App-logo" alt="logo"/>
                 <p>{text}</p>
-                <ExampleComponent/>
+                <Counter/>
                 <SecondComponent/>
                 <button onClick={onButtonClick}>randomize</button>
             </main>
