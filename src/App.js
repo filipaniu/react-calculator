@@ -11,12 +11,13 @@ function App() {
     const text = Math.random();
 
     return (
+        // in HTML use class=...
+        // in JSX use className=...
         <div className="App">
             <header className="App-header">
                 <p>Pierwsza aplikacja</p>
             </header>
             <main>
-                <img src={logo} className="App-logo" alt="logo"/>
                 <p>{text}</p>
                 <Counter/>
                 <SecondComponent/>
