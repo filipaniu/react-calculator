@@ -2,13 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import Counter from "./Counter";
 import SecondComponent from "./SecondComponent";
-
-function onButtonClick() {
-    console.log("clicked ", Math.random());
-}
+import{useState} from "react"
 
 function App() {
-    const text = Math.random();
+    const [randomNumber, setRandomNumber]  = useState(Math.random());
+
+    function onButtonClick() {
+        console.log("clicked ", Math.random());
+        setRandomNumber(Math.random());
+    }
 
     return (
         // in HTML use class=...
@@ -18,7 +20,8 @@ function App() {
                 <p>Pierwsza aplikacja</p>
             </header>
             <main>
-                <p>{text}</p>
+                <img src={logo} className="App-logo" alt="logo"/>
+                <h1>{randomNumber}</h1>
                 <Counter/>
                 <SecondComponent/>
                 <button onClick={onButtonClick}>randomize</button>
