@@ -5,10 +5,10 @@ selector {
 */
 
 .App { /* . selektor po klasie */
-    height: 300px;
-    width: 300px;
-    background: brown;
-    border: 10px solid blue;
+    height: 750px;
+    width: 500px;
+    background: green;
+    border: 5px dashed black;
     font-family: "Arial";
     font-size: 20px;
     text-align: center;
