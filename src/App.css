@@ -3,9 +3,23 @@ selector {
     style body
 }
 */
+/* SELEKTOR PO ELEMENCIE (PO NAZWIE) */
+p {
+    text-align: left;
+    font-size: 17px;
+}
 
-.App { /* . selektor po klasie */
-    height: 750px;
+h2 {
+    text-align: left;
+    color: #e8e819;
+    background: black;
+    width: auto;
+    padding: 15px;
+}
+
+/* . SELEKTORY PO KLASIE - UŻYWAJĄC KROPKI */
+.App {
+    min-height: 250px;
     width: 500px;
     background: green;
     border: 5px dashed black;
@@ -15,4 +29,10 @@ selector {
     color: white;
     padding: 30px;
     margin: 20px;
+}
+
+.highlight {
+    background: yellow;
+    color: black;
+    padding: 3px;
 }
