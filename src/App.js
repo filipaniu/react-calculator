@@ -25,7 +25,7 @@ function App() {
                 <Counter/>
                 <SecondComponent/>
                 <button onClick={onButtonClick}>randomize</button>
-                <h2>First section</h2>
+                <h2 className="indent">First section</h2>
                 <p>Lorem ipsum dolor sit amet, <span className="highlight">consectetur</span> adipiscing elit.</p>
                 <h2>Second chapter</h2>
                 <p>Curabitur euismod dapibus ligula. </p>
