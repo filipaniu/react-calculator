@@ -1,42 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
-import Counter from "./Counter";
-import SecondComponent from "./SecondComponent";
-import {useState} from "react"
+import { useState } from "react"
+import Button from '@mui/material/Button';
+import { Container, TextField } from '@mui/material';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 function App() {
-    const [randomNumber, setRandomNumber] = useState(Math.random());
-
-    function onButtonClick() {
-        console.log("clicked ", Math.random());
-        setRandomNumber(Math.random());
-    }
+    
+    const figure = 'cylinder';
 
     return (
-        // in HTML use class=...
-        // in JSX use className=...
         <div className="App">
-            <header className="App-header">
-                <p>Pierwsza aplikacja</p>
-            </header>
-            <main>
-                <img src={logo} className="App-logo" alt="logo"/>
-                <h1>{randomNumber}</h1>
-                <Counter/>
-                <SecondComponent/>
-                <button onClick={onButtonClick}>randomize</button>
-                <h2 className="indent">First section</h2>
-                <p>Lorem ipsum dolor sit amet, <span className="highlight">consectetur</span> adipiscing elit.</p>
-                <h2>Second chapter</h2>
-                <p>Curabitur euismod dapibus ligula. </p>
-                <h2>Example no 3</h2>
-                <p>Sed hendrerit magna aliquet, <span className="highlight">egestas eros congue</span>, tincidunt erat.
-                    Donec congue et urna vitae tristique.</p>
-                <p>Quisque ut auctor lectus.</p>
-                <h2>Nowy nagłówek</h2>
-                <p>Ala ma kota</p>
-            </main>
-            <footer>Footer</footer>
+            <Container fixed={true}>
+                <header className="App-header">
+                    <h1>Geometric Calculator</h1>
+                </header>
+                <main>
+                    <FormControl fullWidth>
+                        <InputLabel>Figure</InputLabel>
+                        <Select value={figure} label="Figure" onChange={x => console.log('event:',x)}>
+                            <MenuItem value='cylinder'>Cylinder</MenuItem>
+                            <MenuItem value='cone'>Cone</MenuItem>
+                            <MenuItem value='cube'>Cube</MenuItem>
+                        </Select>
+                    </FormControl>
+                </main>
+                <footer></footer>
+            </Container>
         </div>
     );
 }
