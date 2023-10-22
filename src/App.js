@@ -9,7 +9,7 @@ import Select from '@mui/material/Select';
 
 function App() {
     
-    const figure = 'cylinder';
+    const [figure, setFigure] = useState('cylinder');
 
     return (
         <div className="App">
@@ -20,7 +20,7 @@ function App() {
                 <main>
                     <FormControl fullWidth>
                         <InputLabel>Figure</InputLabel>
-                        <Select value={figure} label="Figure" onChange={x => console.log('event:',x)}>
+                        <Select value={figure} label="Figure" onChange={event => setFigure(event.target.value)}>
                             <MenuItem value='cylinder'>Cylinder</MenuItem>
                             <MenuItem value='cone'>Cone</MenuItem>
                             <MenuItem value='cube'>Cube</MenuItem>
