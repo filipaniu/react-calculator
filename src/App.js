@@ -1,7 +1,6 @@
 import './App.css';
 import { useState } from "react"
-import Button from '@mui/material/Button';
-import { Container, TextField } from '@mui/material';
+import { Container } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -25,6 +24,7 @@ function App() {
                             <MenuItem value='cone'>Cone</MenuItem>
                             <MenuItem value='cube'>Cube</MenuItem>
                         </Select>
+                        <p>{figure}</p>
                     </FormControl>
                 </main>
                 <footer></footer>
