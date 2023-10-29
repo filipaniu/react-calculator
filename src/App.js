@@ -5,6 +5,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import ConeCalc from "./components/ConeCalc";
 
 function App() {
     
@@ -24,7 +25,7 @@ function App() {
                             <MenuItem value='cone'>Cone</MenuItem>
                             <MenuItem value='cube'>Cube</MenuItem>
                         </Select>
-                        <p>{figure}</p>
+                        <ConeCalc/>
                     </FormControl>
                 </main>
                 <footer></footer>
