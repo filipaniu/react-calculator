@@ -11,4 +11,4 @@ class Volumes {
     }
 }
 
-export default Volumes;
+export default new Volumes();

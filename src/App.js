@@ -1,6 +1,7 @@
 import './App.css';
 import { useState } from "react"
 import { Container } from '@mui/material';
+import { Grid } from "@mui/material"
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -17,17 +18,19 @@ function App() {
                 <header className="App-header">
                     <h1>Geometric Calculator</h1>
                 </header>
-                <main>
-                    <FormControl fullWidth>
-                        <InputLabel>Figure</InputLabel>
-                        <Select value={figure} label="Figure" onChange={event => setFigure(event.target.value)}>
-                            <MenuItem value='cylinder'>Cylinder</MenuItem>
-                            <MenuItem value='cone'>Cone</MenuItem>
-                            <MenuItem value='cube'>Cube</MenuItem>
-                        </Select>
-                        <ConeCalc/>
-                    </FormControl>
-                </main>
+                <Grid container>
+                    <Grid item xs={12} md={6}>
+                        <FormControl fullWidth>
+                            <InputLabel>Figure</InputLabel>
+                            <Select value={figure} label="Figure" onChange={event => setFigure(event.target.value)}>
+                                <MenuItem value='cylinder'>Cylinder</MenuItem>
+                                <MenuItem value='cone'>Cone</MenuItem>
+                                <MenuItem value='cube'>Cube</MenuItem>
+                            </Select>
+                            <ConeCalc/>
+                        </FormControl>
+                    </Grid>
+                </Grid>
                 <footer></footer>
             </Container>
         </div>
