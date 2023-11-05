@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, TextField, Typography } from "@mui/material";
+import { Button, Card, CardContent, TextField } from "@mui/material";
 import { Grid } from "@mui/material"
 import { Box } from "@mui/material"
 import { useState } from "react";
@@ -39,7 +39,7 @@ function ConeCalc() {
                     value={radius} onChange={x => setRadius(x.target.value)} />
             </Grid>
             <Grid item xs={12}>
-                <Button onClick={calculate} variant="contained" color="primary">Oblicz</Button>
+                <Button onClick={calculate} variant="contained" color="primary">Calculate</Button>
             </Grid>
             <Grid item xs={12}>{results}</Grid>
         </Grid>

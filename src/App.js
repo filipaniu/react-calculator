@@ -7,9 +7,23 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import ConeCalc from "./components/ConeCalc";
+import CubeCalc from "./components/CubeCalc";
+import CylinderCalc from "./components/CylinderCalc";
+
+function renderCalculator(figure) {
+    if (figure == 'cone') {
+        return <ConeCalc />
+    } else if (figure == 'cylinder') {
+        return <CylinderCalc />
+    } else if (figure == 'cube') {
+        return <CubeCalc />
+    } else {
+        return <p>Unsupported figure: {figure}</p>
+    }
+}
 
 function App() {
-    
+
     const [figure, setFigure] = useState('cylinder');
 
     return (
@@ -27,7 +41,7 @@ function App() {
                                 <MenuItem value='cone'>Cone</MenuItem>
                                 <MenuItem value='cube'>Cube</MenuItem>
                             </Select>
-                            <ConeCalc/>
+                            {renderCalculator(figure)}
                         </FormControl>
                     </Grid>
                 </Grid>
