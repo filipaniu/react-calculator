@@ -4,15 +4,19 @@ import { Box } from "@mui/material"
 import { useState } from "react";
 import Volumes from "../Volumes";
 
-function CylinderCalc() {
+const figures = {
+    cone: Volumes.getConeVolume,
+    cylinder: Volumes.getCylinderVolume
+}
 
+function RotationalFigureCalc(props) {
     const [height, setHeight] = useState(0);
     const [radius, setRadius] = useState(0);
     const [volume, setVolume] = useState(null);
     let results = "";
 
     function calculate() {
-        const volume = Volumes.getCylinderVolume(height, radius);
+        const volume = figures[props.figure](height, radius);
         setVolume(volume);
     }
 
@@ -28,7 +32,7 @@ function CylinderCalc() {
     return <Box spacing="2" sx={{ my: 2 }}>
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                <h2 style={{ margin: 0 }}>Cylinder</h2>
+                <h2 style={{ margin: 0 }}>{props.figure}</h2>
             </Grid>
             <Grid item xs={6}>
                 <TextField fullWidth={true} label="height" type="number"
@@ -46,4 +50,4 @@ function CylinderCalc() {
     </Box>
 }
 
-export default CylinderCalc;
+export default RotationalFigureCalc;
