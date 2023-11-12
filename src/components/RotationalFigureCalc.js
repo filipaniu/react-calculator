@@ -3,10 +3,19 @@ import { Grid } from "@mui/material"
 import { Box } from "@mui/material"
 import { useState } from "react";
 import Volumes from "../Volumes";
+import './Calc.css';
 
-const figures = {
-    cone: Volumes.getConeVolume,
-    cylinder: Volumes.getCylinderVolume
+const figuresMap = {
+    cone: {
+        name: 'Cone',
+        image: 'images/cone.png',
+        formula: Volumes.getConeVolume
+    },
+    cylinder: {
+        name: 'Cylinder',
+        image: 'images/cylinder.jpg',
+        formula: Volumes.getCylinderVolume
+    }
 }
 
 function RotationalFigureCalc(props) {
@@ -16,7 +25,7 @@ function RotationalFigureCalc(props) {
     let results = "";
 
     function calculate() {
-        const volume = figures[props.figure](height, radius);
+        const volume = figuresMap[props.figure].formula(height, radius);
         setVolume(volume);
     }
 
@@ -32,7 +41,8 @@ function RotationalFigureCalc(props) {
     return <Box spacing="2" sx={{ my: 2 }}>
         <Grid container spacing={2}>
             <Grid item xs={12}>
-                <h2 style={{ margin: 0 }}>{props.figure}</h2>
+                <h2 style={{ margin: 0 }}>{figuresMap[props.figure].name}</h2>
+                <img className="figure-image" src={figuresMap[props.figure].image} />
             </Grid>
             <Grid item xs={6}>
                 <TextField fullWidth={true} label="height" type="number"

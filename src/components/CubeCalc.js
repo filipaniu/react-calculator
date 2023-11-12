@@ -3,6 +3,7 @@ import { Grid } from "@mui/material"
 import { Box } from "@mui/material"
 import { useState } from "react";
 import Volumes from "../Volumes";
+import './Calc.css';
 
 function CubeCalc(){
     
@@ -28,7 +29,7 @@ function CubeCalc(){
         <Grid container spacing={2}>
             <Grid item xs={12}>
                 <h2 style={{ margin: 0 }}>Cube</h2>
-                <img src="images/cube.jpeg"/>
+                <img className="figure-image" src="images/cube.jpeg"/>
             </Grid>
             <Grid item xs={6}>
                 <TextField fullWidth={true} label="size" type="number"
