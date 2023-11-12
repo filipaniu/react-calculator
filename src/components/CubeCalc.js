@@ -28,6 +28,7 @@ function CubeCalc(){
         <Grid container spacing={2}>
             <Grid item xs={12}>
                 <h2 style={{ margin: 0 }}>Cube</h2>
+                <img src="images/cube.jpeg"/>
             </Grid>
             <Grid item xs={6}>
                 <TextField fullWidth={true} label="size" type="number"
