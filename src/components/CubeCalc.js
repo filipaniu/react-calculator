@@ -2,18 +2,21 @@ import { Button, Card, CardContent, TextField } from "@mui/material";
 import { Grid } from "@mui/material"
 import { Box } from "@mui/material"
 import { useState } from "react";
-import Volumes from "../Volumes";
+import Formulas from "../Formulas";
 import './Calc.css';
 
 function CubeCalc(){
     
     const [size, setSize] = useState(0);
     const [volume, setVolume] = useState(null);
+    const [area, setArea] = useState(null);
     let results = "";
 
     function calculate() {
-        const volume = Volumes.getCubeVolume(size);
+        const area = Formulas.getCubeArea(size);
+        const volume = Formulas.getCubeVolume(size);
         setVolume(volume);
+        setArea(area);
     }
 
     if (volume != null) {
@@ -21,6 +24,7 @@ function CubeCalc(){
             <CardContent>
                 <b>Results</b>
                 <p>Volume: {volume}</p>
+                <p>Area: {area}</p>
             </CardContent>
         </Card>;
     }
@@ -33,7 +37,8 @@ function CubeCalc(){
             </Grid>
             <Grid item xs={6}>
                 <TextField fullWidth={true} label="size" type="number"
-                    value={size} onChange={x => setSize(x.target.value)} />
+                    value={size} onChange={x => setSize(x.target.value)}
+                    inputProps={{min: 0}}/>
             </Grid>
             <Grid item xs={12}>
                 <Button onClick={calculate} variant="contained" color="primary">Calculate</Button>

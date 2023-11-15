@@ -2,19 +2,21 @@ import { Button, Card, CardContent, TextField } from "@mui/material";
 import { Grid } from "@mui/material"
 import { Box } from "@mui/material"
 import { useState } from "react";
-import Volumes from "../Volumes";
+import Formulas from "../Formulas";
 import './Calc.css';
 
 const figuresMap = {
     cone: {
         name: 'Cone',
         image: 'images/cone.png',
-        formula: Volumes.getConeVolume
+        volumeFormula: Formulas.getConeVolume,
+        areaFormula: Formulas.getConeArea
     },
     cylinder: {
         name: 'Cylinder',
         image: 'images/cylinder.jpg',
-        formula: Volumes.getCylinderVolume
+        volumeFormula: Formulas.getCylinderVolume,
+        areaFormula: Formulas.getCylinderArea
     }
 }
 
@@ -22,11 +24,15 @@ function RotationalFigureCalc(props) {
     const [height, setHeight] = useState(0);
     const [radius, setRadius] = useState(0);
     const [volume, setVolume] = useState(null);
+    const [area, setArea] = useState(null);
     let results = "";
 
     function calculate() {
-        const volume = figuresMap[props.figure].formula(height, radius);
+        const area = figuresMap[props.figure].areaFormula(height,radius);
+        console.log(area);
+        const volume = figuresMap[props.figure].volumeFormula(height, radius);
         setVolume(volume);
+        setArea(area);
     }
 
     if (volume != null) {
@@ -34,6 +40,7 @@ function RotationalFigureCalc(props) {
             <CardContent>
                 <b>Results</b>
                 <p>Volume: {volume}</p>
+                <p>Area: {area}</p>
             </CardContent>
         </Card>;
     }
@@ -46,11 +53,13 @@ function RotationalFigureCalc(props) {
             </Grid>
             <Grid item xs={6}>
                 <TextField fullWidth={true} label="height" type="number"
-                    value={height} onChange={x => setHeight(x.target.value)} />
+                    value={height} onChange={x => setHeight(x.target.value)}
+                           inputProps={{min: 0}}/>
             </Grid>
             <Grid item xs={6}>
                 <TextField fullWidth={true} label="radius" type="number"
-                    value={radius} onChange={x => setRadius(x.target.value)} />
+                    value={radius} onChange={x => setRadius(x.target.value)}
+                           inputProps={{min: 0}}/>
             </Grid>
             <Grid item xs={12}>
                 <Button onClick={calculate} variant="contained" color="primary">Calculate</Button>
