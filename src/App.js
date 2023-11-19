@@ -1,7 +1,7 @@
 import './App.css';
-import { useState } from "react"
-import { Container } from '@mui/material';
-import { Grid } from "@mui/material"
+import {useState} from "react"
+import {Container} from '@mui/material';
+import {Grid} from "@mui/material"
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -10,10 +10,10 @@ import CubeCalc from "./components/CubeCalc";
 import RotationalFigureCalc from './components/RotationalFigureCalc';
 
 function renderCalculator(figure) {
-    if (figure == 'cone' || figure =='cylinder') {
+    if (figure == 'cone' || figure == 'cylinder') {
         return <RotationalFigureCalc figure={figure}/>
     } else if (figure == 'cube') {
-        return <CubeCalc />
+        return <CubeCalc/>
     } else {
         return <p>Unsupported figure: {figure}</p>
     }
