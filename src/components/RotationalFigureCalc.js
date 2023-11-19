@@ -28,7 +28,7 @@ function RotationalFigureCalc(props) {
     let results = "";
 
     function calculate() {
-        const area = figuresMap[props.figure].areaFormula(height,radius);
+        const area = figuresMap[props.figure].areaFormula(height, radius);
         console.log(area);
         const volume = figuresMap[props.figure].volumeFormula(height, radius);
         setVolume(volume);
@@ -53,13 +53,13 @@ function RotationalFigureCalc(props) {
             </Grid>
             <Grid item xs={6}>
                 <TextField fullWidth={true} label="height" type="number"
-                    value={height} onChange={x => setHeight(x.target.value)}
-                           inputProps={{min: 0}}/>
+                    value={height} onChange={x => setHeight(parseInt(x.target.value))}
+                    inputProps={{ min: 0 }} />
             </Grid>
             <Grid item xs={6}>
                 <TextField fullWidth={true} label="radius" type="number"
-                    value={radius} onChange={x => setRadius(x.target.value)}
-                           inputProps={{min: 0}}/>
+                    value={radius} onChange={x => setRadius(parseInt(x.target.value))}
+                    inputProps={{ min: 0 }} />
             </Grid>
             <Grid item xs={12}>
                 <Button onClick={calculate} variant="contained" color="primary">Calculate</Button>

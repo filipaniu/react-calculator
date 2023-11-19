@@ -37,7 +37,7 @@ function CubeCalc(){
             </Grid>
             <Grid item xs={6}>
                 <TextField fullWidth={true} label="size" type="number"
-                    value={size} onChange={x => setSize(x.target.value)}
+                    value={size} onChange={x => setSize(parseInt(x.target.value))}
                     inputProps={{min: 0}}/>
             </Grid>
             <Grid item xs={12}>
