@@ -8,6 +8,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import CubeCalc from "./components/CubeCalc";
 import RotationalFigureCalc from './components/RotationalFigureCalc';
+import CalculatorAppBar from './components/CalculatorAppBar';
 
 function renderCalculator(figure) {
     if (figure == 'cone' || figure == 'cylinder') {
@@ -25,10 +26,8 @@ function App() {
 
     return (
         <div className="App">
+            <CalculatorAppBar></CalculatorAppBar>
             <Container fixed={true}>
-                <header className="App-header">
-                    <h1>Geometric Calculator</h1>
-                </header>
                 <Grid container>
                     <Grid item xs={12} md={6}>
                         <FormControl fullWidth>
