@@ -1,7 +1,7 @@
 import './App.css';
-import {useState} from "react"
-import {Container} from '@mui/material';
-import {Grid} from "@mui/material"
+import { useState } from "react"
+import { Container } from '@mui/material';
+import { Grid } from "@mui/material"
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -9,12 +9,15 @@ import Select from '@mui/material/Select';
 import CubeCalc from "./components/CubeCalc";
 import RotationalFigureCalc from './components/RotationalFigureCalc';
 import CalculatorAppBar from './components/CalculatorAppBar';
+import {Routes, Route} from "react-router-dom";
+import CalculatorPage from './components/pages/CalculatorPage';
+import HomePage from './components/pages/HomePage';
 
 function renderCalculator(figure) {
     if (figure == 'cone' || figure == 'cylinder') {
-        return <RotationalFigureCalc figure={figure}/>
+        return <RotationalFigureCalc figure={figure} />
     } else if (figure == 'cube') {
-        return <CubeCalc/>
+        return <CubeCalc />
     } else {
         return <p>Unsupported figure: {figure}</p>
     }
@@ -37,8 +40,12 @@ function App() {
                                 <MenuItem value='cone'>Cone</MenuItem>
                                 <MenuItem value='cube'>Cube</MenuItem>
                             </Select>
-                            {renderCalculator(figure)}
                         </FormControl>
+                        {/* {renderCalculator(figure)} */}
+                        <Routes>
+                            <Route exact path='/' element={<HomePage />} />
+                            <Route exact path='/calculator' element={<CalculatorPage />} />
+                        </Routes>
                     </Grid>
                 </Grid>
                 <footer></footer>
