@@ -6,6 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import { Box, Button, Container } from '@mui/material';
 import CalculateIcon from '@mui/icons-material/Calculate';
 import { Link } from 'react-router-dom';
+import './CalculatorAppBar.css';
 
 
 export default function CalculatorAppBar() {

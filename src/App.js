@@ -1,7 +1,7 @@
 import './App.css';
-import { useState } from "react"
-import { Container } from '@mui/material';
-import { Grid } from "@mui/material"
+import {useState} from "react"
+import {Container} from '@mui/material';
+import {Grid} from "@mui/material"
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
@@ -13,19 +13,7 @@ import {Routes, Route} from "react-router-dom";
 import CalculatorPage from './components/pages/CalculatorPage';
 import HomePage from './components/pages/HomePage';
 
-function renderCalculator(figure) {
-    if (figure == 'cone' || figure == 'cylinder') {
-        return <RotationalFigureCalc figure={figure} />
-    } else if (figure == 'cube') {
-        return <CubeCalc />
-    } else {
-        return <p>Unsupported figure: {figure}</p>
-    }
-}
-
 function App() {
-
-    const [figure, setFigure] = useState('cylinder');
 
     return (
         <div className="App">
@@ -33,18 +21,9 @@ function App() {
             <Container fixed={true}>
                 <Grid container>
                     <Grid item xs={12} md={6}>
-                        <FormControl fullWidth>
-                            <InputLabel>Figure</InputLabel>
-                            <Select value={figure} label="Figure" onChange={event => setFigure(event.target.value)}>
-                                <MenuItem value='cylinder'>Cylinder</MenuItem>
-                                <MenuItem value='cone'>Cone</MenuItem>
-                                <MenuItem value='cube'>Cube</MenuItem>
-                            </Select>
-                        </FormControl>
-                        {/* {renderCalculator(figure)} */}
                         <Routes>
-                            <Route exact path='/' element={<HomePage />} />
-                            <Route exact path='/calculator' element={<CalculatorPage />} />
+                            <Route exact path='/' element={<HomePage/>}/>
+                            <Route exact path='/calculator' element={<CalculatorPage/>}/>
                         </Routes>
                     </Grid>
                 </Grid>
