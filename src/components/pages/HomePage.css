@@ -1,0 +1,8 @@
+.welcome {
+    padding: 0px;
+    padding-top: 200px;
+    text-align: center;
+    height: 100vh;
+    /* Permalink - use to edit and share this gradient. Link stały - użyj, aby edytować i udostępniać ten gradient: https://colorzilla.com/gradient-editor/#ffffff+0,7db9e8+100&0+0,1+100 */
+    background: linear-gradient(135deg,  rgba(255,255,255,0) 0%,rgba(125,185,232,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}

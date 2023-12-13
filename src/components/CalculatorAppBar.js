@@ -22,12 +22,12 @@ export default function CalculatorAppBar() {
                 <Typography variant="h6" sx={{ flexGrow: 1 }}>
                     Geometric Calculator
                 </Typography>
-                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                    <Link to="/" >
-                        <Button sx={{ my: 2, color: 'white', display: 'block' }}>Home</Button>
-                    </Link>
+                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, flexDirection: 'row-reverse' }}>
                     <Link to="/calculator">
                         <Button sx={{ my: 2, color: 'white', display: 'block' }}>Calculator</Button>
+                    </Link>
+                    <Link to="/" >
+                        <Button sx={{ my: 2, color: 'white', display: 'block' }}>Home</Button>
                     </Link>
                 </Box>
             </Toolbar>
