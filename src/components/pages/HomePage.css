@@ -1,6 +1,6 @@
 .welcome {
     padding: 0;
-    padding-top: 200px;
+    padding-top: 150px;
     text-align: center;
     height: 100vh;
     /* Permalink - use to edit and share this gradient. Link stały - użyj, aby edytować i udostępniać ten gradient: https://colorzilla.com/gradient-editor/#ffffff+0,7db9e8+100&0+0,1+100 */
@@ -8,6 +8,6 @@
 }
 
 .copyRights {
-    margin-top: 350px;
+    margin-top: 120px;
     text-align: right;
 }
