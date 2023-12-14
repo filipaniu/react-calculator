@@ -29,7 +29,7 @@ function CubeCalc(){
         </Card>;
     }
 
-    return <Box spacing="2" sx={{ my: 2 }}>
+    return <Box spacing="2" sx={{ my: 2}}>
         <Grid container spacing={2}>
             <Grid item xs={12}>
                 <h2 style={{ margin: 0 }}>Cube</h2>

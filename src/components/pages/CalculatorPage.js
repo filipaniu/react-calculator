@@ -6,7 +6,7 @@ import FormControl from "@mui/material/FormControl";
 import {useState} from "react";
 import RotationalFigureCalc from "../RotationalFigureCalc";
 import CubeCalc from "../CubeCalc";
-import {Container} from "@mui/material";
+import {Box, Container} from "@mui/material";
 
 function renderCalculator(figure) {
     if (figure == 'cone' || figure == 'cylinder') {
@@ -23,15 +23,17 @@ export default function CalculatorPage() {
     const [figure, setFigure] = useState('cylinder');
 
     return <Container fixed={true}>
+        <Box sx={{width:'50%'}}>
         <h2>Calculator</h2>
-        <FormControl fullWidth>
-            <InputLabel>Figure</InputLabel>
-            <Select value={figure} label="Figure" onChange={event => setFigure(event.target.value)}>
-                <MenuItem value='cylinder'>Cylinder</MenuItem>
-                <MenuItem value='cone'>Cone</MenuItem>
-                <MenuItem value='cube'>Cube</MenuItem>
-            </Select>
-        </FormControl>
-        {renderCalculator(figure)}
+            <FormControl fullWidth>
+                <InputLabel>Figure</InputLabel>
+                <Select value={figure} label="Figure" onChange={event => setFigure(event.target.value)}>
+                    <MenuItem value='cylinder'>Cylinder</MenuItem>
+                    <MenuItem value='cone'>Cone</MenuItem>
+                    <MenuItem value='cube'>Cube</MenuItem>
+                </Select>
+            </FormControl>
+            {renderCalculator(figure)}
+        </Box>
     </Container>;
 }
