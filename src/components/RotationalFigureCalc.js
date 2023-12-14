@@ -5,7 +5,6 @@ import {useEffect, useState} from "react";
 import Formulas from "../Formulas";
 import './Calc.css';
 
-
 const figuresMap = {
     cone: {
         name: 'Cone',

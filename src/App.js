@@ -1,6 +1,4 @@
 import './App.css';
-import {Container} from '@mui/material';
-import {Grid} from "@mui/material"
 import CalculatorAppBar from './components/CalculatorAppBar';
 import {Routes, Route} from "react-router-dom";
 import CalculatorPage from './components/pages/CalculatorPage';
